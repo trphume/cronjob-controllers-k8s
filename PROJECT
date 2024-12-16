@@ -7,4 +7,18 @@ layout:
 - go.kubebuilder.io/v4
 projectName: cronjob-controllers-k8s
 repo: github.com/trphume/cronjob-controllers-k8s
+resources:
+- api:
+    crdVersion: v1
+    namespaced: true
+  controller: true
+  domain: cronjob.trphume.com
+  group: batch
+  kind: CronJob
+  path: github.com/trphume/cronjob-controllers-k8s/api/v1
+  version: v1
+  webhooks:
+    defaulting: true
+    validation: true
+    webhookVersion: v1
 version: "3"
